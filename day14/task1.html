@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Task 1: take prompt and Convert to Uppercase
+      let str1 = prompt("Enter the string 1 :");
+      console.log(str1.toUpperCase());
+
+      // // Task 2: take prompt and Convert to Lowercase
+      let str2 = prompt("Enter the String 2 :");
+      console.log(str2.toLowerCase());
+
+      // Task 3: take prompt and Reverse a String
+      // hints: use split and reverse and join method
+
+      let str3 = prompt("Enter the string 3 :");
+      console.log(str3.split("").reverse().join(""));
+
+      // Task 4: take prompt and Count the number of vowels in a string--
+      // hints use match method
+
+      let a = prompt("Enter a Word :");
+      let vwls = /[aeiou]/gi;
+      count = 0;
+      matches = a.match(vwls);
+      console.log(matches);
+      if (matches) {
+        count = matches.length;
+      }
+      console.log(`Number of Vowels in a string : ${count}`);
+    </script>
+  </body>
+</html>

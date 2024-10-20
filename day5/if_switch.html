@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+
+
+      // day of the week message
+      let week = prompt("enter week name");
+
+      switch (week) {
+        case "monday":
+          console.log("Start your week strong!”");
+          break;
+        case "tuesday":
+          console.log("“Keep going!”");
+          break;
+        case "wednesday":
+          console.log("“Halfway there!”");
+          break;
+        case "thursday":
+          console.log("“Almost the weekend!”");
+          break;
+        case "friday":
+          console.log("“Happy Friday!”");
+          break;
+        case "saturday and sunday":
+          console.log("“Enjoy your weekend!”");
+          break;
+        default:
+          console.log("enter valid week name");
+      }
+
+      const weekday = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+
+      const d = new Date();
+      let day = weekday[d.getDay()];
+      console.log(day);
+
+      
+
+      // traffic light simulation
+      let color = prompt("enter color");
+
+      switch (color) {
+        case "red":
+          console.log("“Stop” if the light is red.");
+          break;
+        case "yellow":
+          console.log("“Get Ready” if the light is yellow.");
+          break;
+        case "green":
+          console.log("“Go” if the light is green.");
+          break;
+        default:
+          console.log(color + "----it is not a valid color");
+      }
+
+      // discount calculator
+      let amt = prompt("enter the dollers");
+
+      if (amt < 50) {
+        console.log("“No discount”");
+      } else if (amt >= 50 && amt <= 100) {
+        console.log("“5% discount”");
+      } else if (amt >= 101 && amt <= 200) {
+        console.log("“10% discount”");
+      } else if (amt > 200) {
+        console.log("“15% discount”");
+      } else {
+        console.log("enter valid amount");
+      }
+
+      // resturant menu
+      let dish = prompt("enter dish name");
+      switch (dish) {
+        case "biriyani":
+          console.log("price of the biriyani is :200/-");
+          break;
+        case "pulav":
+          console.log("price of the pulav is :180/-");
+          break;
+        case "punner":
+          console.log("price of the punner is :250/-");
+          break;
+        case "rice":
+          console.log("price of the rice is :80/-");
+          break;
+        default:
+          console.log(dish + ":::this item is not available");
+      }
+
+      // simple calculator
+
+      let num1 = +prompt("enter frst num");
+      let sym = prompt("enter the oprator symbol");
+      let num2 = +prompt("enter 2nd number");
+
+      switch (sym) {
+        case "+":
+          console.log("additon:" + (num1 + num2));
+          break;
+        case "-":
+          console.log("subtract:" + (num1 - num2));
+          break;
+        case "*":
+          console.log("mul:" + num1 * num2);
+          break;
+        case "/":
+          console.log("div:" + num1 / num2);
+          break;
+        default:
+          console.log("enter valid operator");
+      }
+    </script>
+  </body>
+</html>

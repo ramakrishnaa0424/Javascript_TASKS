@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      label {
+        font-size: x-large;
+        margin-left: 20%;
+        color: tomato;
+      }
+      input {
+        margin-top: 10% !important;
+      }
+      button {
+        margin-top: 5%;
+        padding: 15px;
+        background-color: black;
+        color: white;
+        margin-left: 40%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- password matcher
+ -->
+
+    <form action="">
+      <label for="inp1">Enter password:</label>
+      <input type="password" id="inp1" /> <br />
+      <label for="inp2">Confirm password :</label>
+      <input type="password" id="inp2" /> <br />
+      <button>Submit</button>
+    </form>
+    <script>
+      document.forms[0].addEventListener("submit", (event) => {
+        event.preventDefault();
+        let inp1 = document.getElementById("inp1");
+        let inp2 = document.getElementById("inp2");
+        if (
+          event.target[0].value != 0 &&
+          event.target[0].value != "" &&
+          event.target[1].value != 0 &&
+          event.target[1].value != 0
+        ) {
+          if (event.target[0].value == event.target[1].value) {
+            console.log("password match");
+            alert("Login succesfully :)");
+            console.log(event.target[0].value, event.target[1].value);
+          } else if (event.target[0].value !== event.target[1].value) {
+            console.log("Please enter correct password");
+            console.log(event.target[0].value, event.target[1].value);
+            alert("Incorrect password !");
+          }
+        } else {
+          alert("PLEASE ENTER PASSWORD !");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // reverse a string input: hello output : olleh
+
+      console.log("reverse a string input: hello output : olleh");
+
+      var str = "hello";
+      var s = "";
+
+      for (i = str.length - 1; i >= 0; i--) {
+        s += str[i];
+      }
+      console.log(s);
+
+      // iterate an object values and keys using for of loop
+
+      console.log("iterate an object values and keys using for of loop");
+
+      const object1 = {
+        a: "Reddy",
+        b: 42,
+      };
+
+      for (const [key, value] of Object.entries(object1)) {
+        console.log(`${key}: ${value}`);
+      }
+    </script>
+  </body>
+</html>

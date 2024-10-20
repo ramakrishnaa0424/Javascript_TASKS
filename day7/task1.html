@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+   // find a even numbers in an array - [23,54,67,64,46,95,98] and add the odd sum and evensum
+
+let a=[23,54,67,64,46,95,98];
+var oddsum=0;
+var evensum=0;
+
+for(i=1;i<a.length;i++){
+  if(a[i]%2==0){
+    evensum+=a[i];
+    console.log(a[i]+":is even number");
+  }else{
+    oddsum+=a[i]
+    console.log(a[i]+":is odd number");
+  }
+}
+console.log("sum off odd :"+oddsum)
+console.log("sum off even :"+evensum)
+
+sum=oddsum>evensum ? "oddsum greater":"even is greater";
+console.log(sum);
+</script>    
+</body>
+</html>

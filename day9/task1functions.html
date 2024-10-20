@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Task 1: Greeting Function
+
+      console.log("*******Greeting Function*******");
+
+      function greet(name) {
+        console.log("Hello , " + name + "!");
+      }
+      greet("Ramakrishna");
+      greet("Vikram");
+      greet("Mahesh");
+
+      // Task 2: Sum Function
+
+      console.log("**********Sum function*********");
+      function num(a, b) {
+        sum = a + b;
+        sub = a - b;
+        mul = a * b;
+        div = a / b;
+        console.log("sum =" + sum);
+        console.log("sub =" + sub);
+        console.log("mul =" + mul);
+        console.log("div =" + div);
+      }
+      console.log("---first values----");
+      val = num(10, 20);
+      console.log("---second values---");
+      val = num(20, 40);
+
+      // Task 3: Square Function
+
+      console.log("*********Square Function*******");
+      function square(squ) {
+        d = squ * squ;
+        console.log(d);
+      }
+      console.log("square of 10");
+      square(10);
+      console.log("square of 2");
+      square(2);
+      console.log("square of 3");
+      square(3);
+      console.log("square of 4");
+      square(4);
+      console.log("square of 5");
+      square(5);
+
+      //Task 4: Average Function
+
+      console.log("********Average Function*********");
+
+      funavg = (avg1) => {
+        var sum = 0;
+        for (i of avg1) {
+          sum += i;
+        }
+        var avg = sum / avg1.length;
+        console.log(avg);
+      };
+      console.log("First array: [2,6,5]. Average of array numbers is");
+
+      funavg([2, 6, 5]);
+      console.log("First array: [3,7,9]. Average of array numbers is");
+      funavg([3, 7, 9]);
+    </script>
+  </body>
+</html>

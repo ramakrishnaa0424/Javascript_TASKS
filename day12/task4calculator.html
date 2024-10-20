@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #inp1,
+      #inp2 {
+        margin-top: 5%;
+        margin-left: 5%;
+        padding: 15px 0px;
+        border: 2px dotted rgb(9, 29, 242);
+        text-align: center;
+        font-size: large;
+        color: rgb(6, 199, 77);
+      }
+      .symbol {
+        margin-top: 5%;
+        margin-left: 15%;
+        padding: 20px;
+        font-size: x-large;
+        color: white;
+        background: #a8090e;
+      }
+      div {
+        margin-top: -24%;
+        background:springgreen;
+        padding: 30px 80px !important;
+        margin-left: 65%;
+        width: 30%;
+        font-size: x-large;
+        color: rgb(255, 255, 255);
+        text-justify: auto;
+      }
+      label {
+        font-size: x-large;
+        margin-left: 5%;
+      }
+
+    </style>
+  </head>
+  <body>
+    <label for="inp1">Enter the first number :</label>
+    <input type="text" name="" id="inp1" /><br />
+    <label for="inp2">Enter the second number :</label>
+    <input type="text" name="" id="inp2" /> <br />
+    <button id="sum" class="symbol">+</button>
+    <button id="sub" class="symbol">-</button>
+    <button id="mul" class="symbol">*</button>
+    <button id="div" class="symbol">/</button>
+    <div id="inp3"></div>
+    <script>
+      let input1 = document.getElementById("inp1");
+      let input2 = document.getElementById("inp2");
+      let sum = document.getElementById("sum");
+      let sub = document.getElementById("sub");
+      let mul = document.getElementById("mul");
+      let div = document.getElementById("div");
+      sum.addEventListener("click", (event) => {
+        event.preventDefault();
+        var total = input1.value - -input2.value;
+        console.log("addition of : "+input1.value+"+"+input2.value+"="+total);
+        var div1 = document.querySelector("#inp3");
+        div1.innerHTML = "<span>" + "addition of : "+input1.value+"+"+input2.value+"="+total + "</span>";
+      });
+      sub.addEventListener("click", (event) => {
+        event.preventDefault();
+        var total1 = input1.value - input2.value;
+        console.log("subtraction of : "+input1.value+"-"+input2.value+"="+total1);
+        let div1 = document.getElementById("inp3");
+        div1.innerHTML = "<span>" +"subtraction of : "+input1.value+"-"+input2.value+"="+total1 + "</span>";
+      });
+      mul.addEventListener("click", (event) => {
+        event.preventDefault();
+        var total2 = input1.value * input2.value;
+        console.log("multiplication of :"+input1.value+"*"+input2.value+"="+total2);
+        let div1 = document.getElementById("inp3");
+        div1.innerHTML = "<span>" +"multiplication of :"+input1.value+"*"+input2.value+"="+total2 + "</span>";
+      });
+      div.addEventListener("click", (event) => {
+        event.preventDefault();
+        var total3 = input1.value / input2.value;
+        console.log("division of : "+input1.value+"/"+input2.value+"="+total3);
+        let div1 = document.getElementById("inp3");
+        div1.innerHTML = "<span>" + "division of : "+input1.value+"/"+input2.value+"="+total3 + "</span>";
+      });
+    </script>
+  </body>
+</html>

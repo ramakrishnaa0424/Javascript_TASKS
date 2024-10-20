@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // find a even numbers in a string - a=234546937;    add evensum and oddsum
+
+var a="234546937";
+oddsum=0;
+evensum=0;
+for(i=0;i<a.length;i++){
+    if(a[i]%2==0){
+        console.log(a[i]+": even");
+        evensum+=Number(a[i]);
+    }
+    else{
+        console.log(a[i]+":odd")
+        oddsum+=Number(a[i]);
+    }
+}
+console.log("sum of oddnumbers :"+ oddsum)
+console.log("sum of evennumbers :"+ evensum)
+</script>    
+</body>
+</html>

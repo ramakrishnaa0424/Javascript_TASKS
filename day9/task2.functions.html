@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // tasl 5:Vowels Function
+
+      console.log("**********Vowels Function***********");
+      function vowel(k) {
+        let s = k.toLowerCase();
+        let flag = 0;
+        for (let i = 0; i < s.length; i++) {
+          if (
+            s[i] === "a" ||
+            s[i] === "e" ||
+            s[i] === "i" ||
+            s[i] === "o" ||
+            s[i] === "u"
+          ) {
+            flag = 1;
+            break;
+          }
+        }
+        if (flag === 0) console.log("it doesnot contain owels");
+        else console.log("it cantain vowel");
+      }
+      let vow = prompt("Enter the string :");
+      vowel(vow);
+
+      // Task 6: Temperature Converter
+
+      console.log("*******Temperature Converter*******");
+      function temp(s, t) {
+        if (s === "C" || s === "c") {
+          let w = ((t - 32) * 5) / 9;
+          console.log("cel" + " " + w);
+        } else if (s === "f" || s === "F") {
+          let q = (t * 9) / 5 + 32;
+          console.log("fer" + "  " + q);
+        } else console.log("invalid.......");
+      }
+      let scale = prompt("enter the value in f or c : ");
+      let temperature = prompt("enter the temp :");
+      temp(scale, temperature);
+    </script>
+  </body>
+</html>
