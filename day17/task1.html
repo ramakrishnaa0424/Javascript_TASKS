@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let dig = "1234567890";
+      otp = "";
+      let otp1 = (len) => {
+        for (i = 1; i <= len; i++) {
+          otp = otp + Math.round(Math.random() * dig.length);
+        }
+        return otp;
+      };
+      console.log("6 digits random OTP :");
+      console.log(otp1(6));
+    </script>
+  </body>
+</html>
