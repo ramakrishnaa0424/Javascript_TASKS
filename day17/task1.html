@@ -3,20 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>OTP Generator</title>
+    <style>
+      /* styles.css */
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .container {
+        text-align: center;
+        position: absolute;
+        background: url("https://as2.ftcdn.net/v2/jpg/08/61/49/77/1000_F_861497777_2puxMP29X8zQ5wf6yX3BwDQbX9CoFyIk.jpg")
+          no-repeat;
+        padding: 100px;
+        border-radius: 8px;
+        /* margin-left: 60%; */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      #show_otp {
+        font-size: 24px;
+        margin: 20px 0;
+        padding: 10px;
+        border: 2px solid #ff2f00;
+        color: #ffffff;
+        height: 40px;
+        line-height: 40px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #00bfff;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #4c4e4f;
+      }
+      img {
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
   </head>
   <body>
+    <img
+      src="https://images.pexels.com/photos/457881/pexels-photo-457881.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      alt=""
+    />
+    <div class="container">
+      <h1 style="color: white">OTP Generator</h1>
+      <div id="show_otp"></div>
+      <button>Generate OTP</button>
+    </div>
+
     <script>
-      let dig = "1234567890";
-      otp = "";
-      let otp1 = (len) => {
-        for (i = 1; i <= len; i++) {
-          otp = otp + Math.round(Math.random() * dig.length);
+      function generateOTP() {
+        let dig = "1234567890";
+        let otp = "";
+        for (let i = 0; i < 6; i++) {
+          otp += Math.floor(Math.random() * dig.length);
         }
         return otp;
-      };
-      console.log("6 digits random OTP :");
-      console.log(otp1(6));
+      }
+      let pp = document.querySelector("button");
+      pp.addEventListener("click", function () {
+        var otp = generateOTP();
+        let show_otp = document.getElementById("show_otp");
+        show_otp.innerText = otp;
+      });
     </script>
   </body>
 </html>
