@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #time {
+        text-align: center;
+        margin-top: 18%;
+        font-size: 300%;
+        background: #2f475b;
+        padding: 30px;
+        /* background: transparent; */
+        background: turquoise;
+        width: 30%;
+        border-radius: 15px;
+        margin-left: 30%;
+        position: absolute;
+      }
+      #hr {
+        color: red;
+        border: 2px solid red;
+        border-radius: 50%;
+        padding: 20px;
+      }
+      #min {
+        color: purple;
+        border: 2px solid purple;
+        border-radius: 50% !important;
+        padding: 20px;
+      }
+      #sec {
+        color:yellow;
+        border: 2px solid yellow;
+        border-radius: 50%;
+        padding: 20px;
+      }
+      body {
+        background: url("https://images.pexels.com/photos/599705/pexels-photo-599705.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+          no-repeat ;
+        background-size: 100vw;
+        height: 10vh;
+      }
+      #dat {
+        margin-top: 100% !important;
+        color: sandybrown;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="time">
+        <span id="hr"></span>
+        <span id="min"></span>
+        <span id="sec"></span>
+
+        <hr />
+        <span id="dat"></span>
+      </div>
+    </div>
+    <script>
+      let time = document.getElementById("time");
+      let hours = document.getElementById("hr");
+      let minutes = document.getElementById("min");
+      let seconds = document.getElementById("sec");
+      let dat = document.getElementById("dat");
+      setInterval(() => {
+        let date = new Date();
+
+        hours.innerHTML = date.getHours();
+        minutes.innerHTML = date.getMinutes();
+        seconds.innerHTML = date.getSeconds();
+        dat.innerHTML = date.toDateString();
+      }, 1000);
+    </script>
+  </body>
+</html>

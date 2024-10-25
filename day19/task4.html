@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Task4.Filter out words longer than 5 characters.
+      let arr1 = ["Ramakrishna", "Ram", "Reddy", "Yanna", "hi", "bye"];
+
+      let arr2 = arr1.filter((value) => {
+        if (value.length >= 5) {
+          return value;
+        }
+      });
+      console.log("The orignal array is : ", arr1);
+      console.log("The words with more than 5 characters are : ", arr2);
+    </script>
+  </body>
+</html>

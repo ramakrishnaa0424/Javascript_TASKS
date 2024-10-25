@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+
+    <style>
+.container{
+    text-align: center;
+    margin-top: 15%;
+    border: 2px dashed rgb(30, 255, 0);
+    padding: 50px;
+    background-color: rgb(89, 212, 216);
+    width: 20%;
+    margin-left: 35%;
+    border-radius: 5px;
+}
+label{
+    color: rgb(250, 2, 39);
+    font-size: large;
+}
+#date{
+    color: rgb(106, 10, 202);
+    background: #c5e0ee;
+    padding: 4px;
+    
+}
+#btn{
+    color: white;
+    padding: 8px;
+    background-color:violet;
+}
+#age{
+    color: rgb(11, 9, 138);
+    font-size: large;
+}
+body{
+   background-repeat: no-repeat;
+   background-size: 100%;
+    background-image: url('https://img.freepik.com/premium-photo/calculator-photos-reflective-surface-with-scifi-theme_1234220-37965.jpg?w=1060');
+}
+span{
+    color: sienna;
+    margin-top: -10%;
+    font-size: xx-large;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <span>AGE CALCULATOR</span><hr> <br>
+        <label for="date">Select Your Date Of Birth :</label>  <br><br>
+        <input type="date" id="date"> <br> <br>
+        <button id="btn">Calculate Age</button> <br> <br>
+        <div id="age"></div>
+    </div>
+    <script>
+        let inp = document.getElementById("date");
+        let btn = document.getElementById("btn");
+        let age = document.getElementById("age");
+
+        btn.addEventListener('click', () => {
+            var o_date = new Date(inp.value);
+            var n_date = new Date();
+            
+            let years = n_date.getFullYear() - o_date.getFullYear();
+            let months = n_date.getMonth() - o_date.getMonth();
+            let days = n_date.getDate() - o_date.getDate();
+
+            if (months < 0 || (months === 0 && days < 0)) {
+                years--;
+                months += (months < 0 ? 12 : 0);
+            }
+            if (days < 0) {
+                months--;
+                days += new Date(n_date.getFullYear(), n_date.getMonth(), 0).getDate();
+            }
+
+            age.textContent = `Your Age is : ${years} years, ${months} months, and ${days} days`;
+        });
+    </script>
+</body>
+</html>

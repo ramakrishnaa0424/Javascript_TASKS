@@ -1,0 +1,51 @@
+
+/* Basic page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(231, 239, 239);
+    display: grid;
+    /* flex-wrap: wrap; */
+    grid-template-columns: auto auto auto ;
+    /* justify-content: center; */
+    margin: 0;
+    gap: 20px 40px !important;
+    padding: 20px;
+}
+
+/* Card container styling */
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Individual card styling */
+#card {
+    background-color: #e9ebb1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* overflow: hidden; */
+    width: 350px;
+    padding: 16px;
+    text-align: center;
+}
+#card img{
+    width: 100px ;
+    height: 100px;
+}
+ span span{
+    font-weight: 600;
+}
+#card p{
+    color: brown;
+}
+#card span{
+     color:teal;
+}
+#card h3{
+    color: blue;
+}
+
