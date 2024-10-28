@@ -297,15 +297,22 @@
                 <p>${value.description}</p>
                 <span><span>Category:</span> ${value.category}</span> <br>
                 <span><span>Price:</span> $${value.price}</span><br>
-                <span><span>Rating:</span> ${value.rating.rate} / 5 (Count: ${value.rating.count})</span>
+                <span><span>Rating:</span> ${value.rating.rate} / 5 (Count: ${value.rating.count})</span><br>
             `;
             
-   div1.appendChild(card);
-   document.body.append(div1)
+ 
+            let btn=document.createElement('button')
+            btn.innerText='Add to Cart'
+            btn.addEventListener('click',(event)=>{
+                
+                card.style.display='none'
+            })
+            card.appendChild(btn)
+            div1.appendChild(card);
+            document.body.append(div1)
             
-        }
-    )
-
+        })
+  
 // console.log(arr2);
 
 

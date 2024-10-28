@@ -49,3 +49,13 @@ body {
     color: blue;
 }
 
+button{
+    color:white;
+    font-size: large;
+    background-color: tomato;
+padding: 8px;
+border: 2px double red;
+border-radius: 7px;
+
+margin-top: 5%;
+}
