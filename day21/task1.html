@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="">
+        <label for="inp1">first name :</label>
+        <input type="text" id="inp1"> <br> <br>
+        <label for="inp2">last name :</label>
+        <input type="text" id="inp2"> <br> <br>
+        <button > Submit</button> <br> <br>
+        <button onclick="fun()">Go to Cart</button>
+</form>
+    <script>
+        document.forms[0].addEventListener('submit',(event)=>{
+        let inp1=document.getElementById('inp1')
+        let inp2=document.getElementById('inp2')
+
+       
+    event.preventDefault();
+    console.log(event);
+    
+        console.log(event.target[0].value);
+        console.log(event.target[1].value);
+        
+        localStorage.setItem('input1',event.target[0].value)
+        localStorage.setItem('input2',event.target[1].value)
+        
+       
+    })
+    function fun(){
+        history.forward('task2.html','_self')
+    }
+
+
+
+    </script>
+</body>
+</html>
