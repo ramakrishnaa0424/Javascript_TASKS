@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(231, 239, 239);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card {
+            background-color: #e9ebb1;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .card img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .card p {
+            color: brown;
+        }
+
+        .card span {
+            color: teal;
+        }
+
+        .card h3 {
+            color: blue;
+        }
+
+        button {
+            color: white;
+            font-size: large;
+            background-color: tomato;
+            padding: 8px;
+            border: 2px double red;
+            border-radius: 7px;
+            margin-top: 5%;
+        }
+
+        .remove-button {
+            background-color: crimson;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        #cart-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 20px 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">Back</button> 
+    <h1>Your Cart</h1>
+    <div id="cart-container"></div>
+
+    <script>
+        let arr2 = JSON.parse(localStorage.getItem('cart')) || [];
+        let cartContainer = document.getElementById('cart-container');
+
+        console.log(arr2);
+
+        // Function to render the cart items
+        arr2.forEach((value, index) => {
+            let card = document.createElement('div');
+            card.setAttribute("class", "card");
+
+            card.innerHTML = `
+                <img src="${value.image}" alt="${value.title}">
+                <h3>${value.title}</h3>
+                <p>${value.description}</p>
+                <span><strong>Category:</strong> ${value.category}</span> <br>
+                <span><strong>Price:</strong> $${value.price}</span><br>
+                <span><strong>Rating:</strong> ${value.rating.rate} / 5 (Count: ${value.rating.count})</span><br>
+                <button class="remove-button" onclick="removeItem(${index})">Remove</button>
+            `;
+
+            cartContainer.appendChild(card);
+        });
+
+        // Function to remove an item from the cart
+        function removeItem(index) {
+            arr2.splice(index, 1);  // Remove item from array
+            localStorage.setItem('cart', JSON.stringify(arr2)); // Update localStorage
+            location.reload(); // Reload to update UI
+        }
+
+        // Create and append the "Clear" button
+        let btn3 = document.createElement('button');
+        btn3.innerText = 'Clear All';
+        btn3.style.marginTop = '20px';
+        btn3.addEventListener('click', () => {
+            localStorage.removeItem('cart');
+            location.reload();
+        });
+        document.body.appendChild(btn3); // Append to the body to display the button
+
+        // Back button functionality
+        let btn1 = document.getElementById('btn1');
+        btn1.addEventListener('click', () => {
+            window.close();
+        });
+    </script>
+</body>
+</html>

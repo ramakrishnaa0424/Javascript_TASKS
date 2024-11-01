@@ -1,24 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+    <style>
+      /* Styling for the button */
+      button {
+        margin-bottom: 20px;
+        padding: 10px;
+        font-size: 16px;
+      }
+
+      /* Styling for the h1 container */
+      h1 {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 10px;
+        padding: 10px;
+      }
+
+      /* Styling for each item */
+      .item {
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      .it {
+        color: white;
+        background-color: rgb(60, 28, 220) !important;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
     <button onclick="cls()">Back</button>
     <h1></h1>
+
     <script>
-     a= localStorage.getItem('input1')
-     b= localStorage.getItem('input2')
-     console.log(a,b);
-div=document.querySelector('h1')
-div.innerHTML=`First Name : ${a} <br> Last Name : ${b}`
-document.body.appendChild(div)
-     function cls(){
-       window.close();
-     }
-   
+      let arr1 = JSON.parse(localStorage.getItem("inputs")) || [];
+
+      console.log(arr1);
+
+      let div = document.querySelector("h1");
+
+      arr1.map((item) => {
+        let itemDiv = document.createElement("div");
+        itemDiv.textContent = item;
+        itemDiv.className = "item";
+        itemDiv.setAttribute("class", "it");
+
+        div.appendChild(itemDiv);
+      });
+
+      // Function to close the window
+      function cls() {
+        window.close();
+      }
     </script>
-</body>
+  </body>
 </html>

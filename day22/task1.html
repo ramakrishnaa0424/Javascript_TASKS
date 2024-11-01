@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Basic page styling */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: rgb(231, 239, 239);
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Card container styling */
+      #container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 40px;
+        justify-content: center;
+        max-width: 1200px;
+        width: 100%;
+      }
+
+      /* Individual card styling */
+      .card {
+        background-color: #e9ebb1;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 350px;
+        padding: 16px;
+        text-align: center;
+      }
+
+      .card img {
+        width: 100px;
+        height: 100px;
+      }
+
+      .card p {
+        color: brown;
+      }
+
+      .card span {
+        color: teal;
+      }
+
+      .card h3 {
+        color: blue;
+      }
+
+      button {
+        color: rgb(255, 255, 255);
+        font-size: large;
+        background-color: tomato;
+        padding: 8px;
+        border: 2px double red;
+        border-radius: 7px;
+        cursor: pointer;
+        margin-top: 5%;
+      }
+      #go {
+        position: fixed;
+        bottom: 50%;
+        left: 92%;
+        background-color: rgb(18, 0, 90);
+        border: 2px solid black;
+        padding: 15px;
+      }
+      h1 {
+        color: sienna;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      SHOP HERE !
+      <hr />
+    </h1>
+    <button onclick="go_to_cart()" id="go">go_to_cart</button> <br />
+    <div id="container"></div>
+    <!-- Create the container div here -->
+    <!-- <button id="btn2">remove
+    </button> -->
+
+    <script>
+      async function getdata() {
+        let response = await fetch("https://fakestoreapi.com/products");
+        let val = await response.json();
+
+        console.log(val); /// it stores all data
+        const container = document.getElementById("container");
+
+        val.map((value) => {
+          let card = document.createElement("div");
+          card.setAttribute("class", "card"); // Changed to class for multiple cards
+
+          card.innerHTML = `
+                <img src="${value.image}" alt="${value.title}">
+                <h3>${value.title}</h3>
+                <p>${value.description}</p>
+                <span><span>Category:</span> ${value.category}</span> <br>
+                <span><span>Price:</span> $${value.price}</span><br>
+                <span><span>Rating:</span> ${value.rating.rate} / 5 (Count: ${value.rating.count})</span><br>
+             `;
+
+          let btn = document.createElement("button");
+          btn.setAttribute("id", "btn");
+          btn.innerText = "Add to Cart";
+          btn.addEventListener("click", () => {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            cart.push(value);
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            // card.style.display='none'
+          });
+
+          card.appendChild(btn);
+          container.appendChild(card);
+        });
+        let go = document.getElementsByTagName("button");
+      }
+      getdata();
+      function go_to_cart() {
+        window.open("task2.html", "_blank");
+      }
+    </script>
+  </body>
+</html>
